@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#D3C1C1"
-    tools:context=".EmailSignupActivity">
+    tools:context=".LoginActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -34,13 +34,12 @@
             android:gravity="center"/>
 
         <EditText
-            android:id="@+id/username_inputBox"
+            android:id="@+id/login_id_inputBox"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textSize="23dp"
             android:layout_marginBottom="15dp"/>
-
     </LinearLayout>
 
     <LinearLayout
@@ -50,43 +49,16 @@
         android:layout_gravity="center">
 
         <TextView
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:text="PW"
-            android:textStyle="bold"
-            android:textSize="30dp"
-            android:layout_marginRight="20dp"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/password1_inputBox"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint=""
-            android:inputType="textPassword"
-            android:textSize="23dp"
-            android:layout_marginBottom="15dp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
-
-        <TextView
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:text="PW"
-            android:textStyle="bold"
-            android:textSize="30dp"
-            android:layout_marginRight="20dp"
-            android:gravity="center"/>
+        android:text="PW"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"/>
 
         <EditText
-            android:id="@+id/password2_inputBox"
+            android:id="@+id/login_pw_inputBox"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -104,11 +76,26 @@
         android:gravity="center">
 
         <Button
-            android:id="@+id/signup_Btn"
+            android:id="@+id/login_Btn"
             android:layout_width="120dp"
             android:layout_height="70dp"
-            android:text="SIGN UP"
-            android:textSize="20dp" />
+            android:text="LOGIN"
+            android:textSize="20dp"
+            android:layout_marginBottom="50dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Do you want to sign up?"
+            android:textSize="20dp"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/hereBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="click HERE"
+            android:textSize="23dp"/>
 
     </LinearLayout>
 

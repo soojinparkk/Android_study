@@ -2,6 +2,7 @@ package com.example.instagram
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
@@ -23,12 +24,14 @@ class EmailSignupActivity : AppCompatActivity() {
         setContentView(R.layout.activity_email_signup)
 
         initView(this)
-        setupListener()
+        setupListener(this)
     }
 
-    fun setupListener() {
+    fun setupListener(activity: Activity) {
         registerBtn.setOnClickListener {
             register(this)
+            val intent = Intent(activity, LoginActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -54,6 +57,8 @@ class EmailSignupActivity : AppCompatActivity() {
                     val user = response.body()
                     val token = user!!.token!!
                     saveUserToken(token, activity)
+
+                    (application as MasterApplication).createRetrofit()
                 }
             }
         })

@@ -33,13 +33,14 @@ class EmailSignupActivity : AppCompatActivity() {
     }
 
     fun register(activity: Activity) {
-        val username = usernameView.text.toString()
-        val password1 = userPasswordView.text.toString()
-        val password2 = userPassword2View.text.toString()
-        val registerVal = RegisterFromServer(username, password1, password2)
+        val username = getUserName()
+        val password1 = getUserPassword1()
+        val password2 = getUserPassword2()
+        // val registerVal = RegisterFromServer(username, password1, password2)
 
 
-        (application as MasterApplication).service.register(registerVal).enqueue(object : Callback<UserFromServer> {
+        (application as MasterApplication).service.register(username, password1, password2)
+            .enqueue(object : Callback<UserFromServer> {
             override fun onFailure(call: Call<UserFromServer>, t: Throwable) {
                 Toast.makeText(activity, "가입 실패", Toast.LENGTH_LONG).show()
             }
@@ -59,7 +60,7 @@ class EmailSignupActivity : AppCompatActivity() {
     }
 
     fun saveUserToken(token: String, activity: Activity) {
-        val sp = activity.getSharedPreferences("logon_sp", Context.MODE_PRIVATE)
+        val sp = activity.getSharedPreferences("login_sp", Context.MODE_PRIVATE)
         val editor = sp.edit()
         editor.putString("login_sp", token)
         editor.commit()

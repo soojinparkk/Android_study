@@ -26,7 +26,7 @@ class MasterApplication: Application() {
             val original = it.request()
 
             if (checkIsLogin()) {
-                getUserToken()?.let { token ->
+                getUserToken().let { token ->
                     val request = original.newBuilder()
                         .header("Authorization", "token "+token)
                         .build()

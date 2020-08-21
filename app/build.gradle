@@ -42,4 +42,8 @@ dependencies {
     implementation 'com.facebook.stetho:stetho-okhttp3:1.5.1'
     implementation 'com.facebook.stetho:stetho-js-rhino:1.5.1'
 
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
 }

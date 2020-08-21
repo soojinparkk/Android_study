@@ -36,7 +36,7 @@ class MasterApplication: Application() {
             val original = it.request()
 
             if (checkIsLogin()) {
-                getUserToken()?.let { token ->
+                getUserToken().let { token ->
                     val request = original.newBuilder()
                         .header("Authorization", "token $token")
                         .build()
@@ -68,7 +68,7 @@ class MasterApplication: Application() {
     // SharedPreferences에 token 값 저장되어 있음
     // 해당 key의 값(= token 값)을 불러옴
     // -> token 값이 없으면 login X
-    fun checkIsLogin(): Boolean {
+    private fun checkIsLogin(): Boolean {
         val sp = getSharedPreferences("login_sp", Context.MODE_PRIVATE)
         val token = sp.getString("login_sp", "null")
 
@@ -76,12 +76,12 @@ class MasterApplication: Application() {
     }
 
     // token 값 내보내는 함수
-    fun getUserToken(): String? {
+    private fun getUserToken(): String? {
         val sp = getSharedPreferences("login_sp", Context.MODE_PRIVATE)
         val token = sp.getString("login_sp", "null")
 
-        if (token == "null") return null
-        else return token
+        return if (token == "null") null
+        else token
     }
 
 }

@@ -47,6 +47,11 @@ class LoginActivity : AppCompatActivity() {
                             saveUserToken(token, this@LoginActivity)
 
                             (application as MasterApplication).createRetrofit()
+
+                            // 로그인 완료 후 Post 액티비티로 이동
+                            startActivity(
+                                Intent(this@LoginActivity, PostListActivity::class.java)
+                            )
                         }
                     }
                 })

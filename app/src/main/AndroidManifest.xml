@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <!-- name 부분에 MasterApplication 등록 -->
     <application
         android:name=".MasterApplication"
         android:allowBackup="true"
@@ -13,6 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".PostListActivity">
+
+        </activity>
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,10 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EmailSignupActivity">
-
-        </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".EmailSignupActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

@@ -29,6 +29,8 @@ interface RetrofitService {
     ): Call<UserFromServer>
     */
 
+    // @Headers("content-type: application/json")
+
     @POST("user/signup/")
     @FormUrlEncoded
     fun register(
@@ -43,5 +45,8 @@ interface RetrofitService {
         @Field("username")username: String,
         @Field("password")password: String
     ): Call<UserFromServer>
+
+    @GET("instagram/post/list/all/")
+    fun getAllPosts(): Call<ArrayList<PostFromServer>>
 
 }

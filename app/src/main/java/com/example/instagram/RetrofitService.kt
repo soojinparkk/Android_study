@@ -9,6 +9,7 @@ interface RetrofitService {
     @GET("json/students/")
     fun getStudentsList(): Call<ArrayList<PersonFromServer>>
 
+
     @POST("json/students/")
     fun createStudent(
         @Body params : HashMap<String, Any>
@@ -18,6 +19,14 @@ interface RetrofitService {
     fun createStudentEasy(
         @Body person : PersonFromServer
     ): Call<PersonFromServer>
+    */
+
+
+    /*
+    @POST("user/signup/")
+    fun register(
+        @Body register : RegisterToServer
+    ): Call<UserFromServer>
     */
 
     @POST("user/signup/")
@@ -31,7 +40,8 @@ interface RetrofitService {
     @POST("user/login/")
     @FormUrlEncoded
     fun login(
-        @Field("usernamme")username: String,
+        @Field("username")username: String,
         @Field("password")password: String
     ): Call<UserFromServer>
+
 }

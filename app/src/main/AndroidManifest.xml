@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- name 부분에 MasterApplication 등록 -->
     <application
         android:name=".MasterApplication"
         android:allowBackup="true"

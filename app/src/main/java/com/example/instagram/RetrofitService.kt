@@ -29,7 +29,7 @@ interface RetrofitService {
     ): Call<UserFromServer>
     */
 
-    // @Headers("content-type: application/json")
+    // @Headers("content-type: application/x-www-form-urlencoded")
 
     @POST("user/signup/")
     @FormUrlEncoded

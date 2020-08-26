@@ -36,7 +36,7 @@ class MasterApplication: Application() {
             val original = it.request()
 
             if (checkIsLogin()) {
-                getUserToken().let { token ->
+                getUserToken()?.let { token ->
                     val request = original.newBuilder()
                         .header("Authorization", "token $token")
                         .build()
@@ -48,17 +48,16 @@ class MasterApplication: Application() {
             }
         }
 
-        // Stetho 사용
         val client = OkHttpClient.Builder()
             .addInterceptor(header)
-            .addNetworkInterceptor(StethoInterceptor())
+            .addNetworkInterceptor(StethoInterceptor())     // Stetho 사용
             .build()
 
         // retrofit 생성
         val retrofit = Retrofit.Builder()
             .baseUrl("http://mellowcode.org/")
             .addConverterFactory(GsonConverterFactory.create())
-            .client(client)     // Stetho 사용
+            .client(client)
             .build()
 
         service = retrofit.create(RetrofitService::class.java)

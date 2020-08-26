@@ -1,5 +1,6 @@
 package com.example.instagram
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -48,6 +49,18 @@ class PostListActivity : AppCompatActivity() {
                     }
                 }
             })
+
+        menu_myList.setOnClickListener {
+            startActivity(Intent(this, MyPostListActivity::class.java))
+        }
+
+        menu_upload.setOnClickListener {
+            startActivity(Intent(this, UploadActivity::class.java))
+        }
+
+        menu_myInfo.setOnClickListener {
+            startActivity(Intent(this, UserInfoActivity::class.java))
+        }
     }
 
 }

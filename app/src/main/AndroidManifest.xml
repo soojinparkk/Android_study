@@ -12,17 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".MyPostListActivity"></activity>
+        <activity android:name=".UploadActivity" />
+        <activity android:name=".UserInfoActivity" />
         <activity android:name=".PostListActivity">
-
-        </activity>
-        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EmailSignupActivity"></activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".EmailSignupActivity" />
         <activity android:name=".MainActivity" />
     </application>
 

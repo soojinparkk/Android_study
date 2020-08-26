@@ -33,10 +33,6 @@ class EmailSignupActivity : AppCompatActivity() {
     fun setupListener(activity: Activity) {
         registerBtn.setOnClickListener {
             register(this)
-
-            // 회원가입 성공 후 로그인 화면으로 이동
-            val intent = Intent(activity, LoginActivity::class.java)
-            startActivity(intent)
         }
     }
 
@@ -65,6 +61,10 @@ class EmailSignupActivity : AppCompatActivity() {
 
                     // createRetrofit() 다시 호출
                     (application as MasterApplication).createRetrofit()
+
+                    // 회원가입 성공 후 로그인 화면으로 이동
+                    val intent = Intent(activity, LoginActivity::class.java)
+                    startActivity(intent)
                 }
             }
         })

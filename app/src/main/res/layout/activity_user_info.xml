@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#D3C1C1"
+    tools:context=".UserInfoActivity">
+
+    <TextView
+        android:id="@+id/logout_Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOGOUT"
+        android:textSize="40dp"
+        android:textColor="#5C4E4E"
+        android:gravity="center"
+        android:layout_marginTop="30dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/menu_allList4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="All"
+            android:textSize="20dp"
+            android:textColor="#5C4E4E"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/menu_myList4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="My List"
+            android:textSize="20dp"
+            android:textColor="#5C4E4E"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/menu_upload4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Upload"
+            android:textSize="20dp"
+            android:textColor="#5C4E4E"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/menu_myInfo4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="My Info"
+            android:textSize="20dp"
+            android:textColor="#5C4E4E"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

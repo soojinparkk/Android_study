@@ -1,9 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D3C1C1"
+    android:padding="16dp"
     tools:context=".UploadActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/upload_content_input"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:hint="내용을 입력해주세요"/>
+
+    <TextView
+        android:id="@+id/upload_pic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Pictures"
+        android:textColor="#5C4E4E"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/upload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Upload"
+        android:textColor="#5C4E4E"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:layout_below="@id/upload_pic"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/menu_allList3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="All"
+            android:textSize="20dp"
+            android:textColor="#5C4E4E"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/menu_myList3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="My List"
+            android:textSize="20dp"
+            android:textColor="#5C4E4E"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/menu_upload3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Upload"
+            android:textSize="20dp"
+            android:textColor="#5C4E4E"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/menu_myInfo3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="My Info"
+            android:textSize="20dp"
+            android:textColor="#5C4E4E"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

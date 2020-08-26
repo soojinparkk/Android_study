@@ -40,7 +40,6 @@ class EmailSignupActivity : AppCompatActivity() {
         val username = getUserName()
         val password1 = getUserPassword1()
         val password2 = getUserPassword2()
-        val registerVal = RegisterToServer(username, password1, password2)
 
         // Callback: retrofit으로 import 해야 함
         (application as MasterApplication).service.register(username, password1, password2)

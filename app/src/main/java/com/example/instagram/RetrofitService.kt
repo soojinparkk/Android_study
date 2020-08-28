@@ -40,4 +40,7 @@ interface RetrofitService {
         @Part("content")requestBody: RequestBody
     ): Call<PostFromServer>
 
+    @GET("instagram/post/list/")
+    fun getUserPosts(): Call<ArrayList<PostFromServer>>
+
 }

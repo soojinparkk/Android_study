@@ -1,27 +1,11 @@
 package com.example.instagram
 
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
 
 interface RetrofitService {
-    /*
-    // 어노테이션
-    @GET("json/students/")
-    fun getStudentsList(): Call<ArrayList<PersonFromServer>>
-
-
-    @POST("json/students/")
-    fun createStudent(
-        @Body params : HashMap<String, Any>
-    ): Call<PersonFromServer>
-
-    @POST("json/students/")
-    fun createStudentEasy(
-        @Body person : PersonFromServer
-    ): Call<PersonFromServer>
-    */
-
-
     /*
     @POST("user/signup/")
     fun register(
@@ -48,5 +32,12 @@ interface RetrofitService {
 
     @GET("instagram/post/list/all/")
     fun getAllPosts(): Call<ArrayList<PostFromServer>>
+
+    @Multipart
+    @POST("instagram/post/")
+    fun uploadPost(
+        @Part image: MultipartBody.Part,
+        @Part("content")requestBody: RequestBody
+    ): Call<PostFromServer>
 
 }

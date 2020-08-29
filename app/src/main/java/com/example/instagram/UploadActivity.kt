@@ -38,11 +38,13 @@ class UploadActivity : AppCompatActivity() {
                     this,
                     arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE),
                     1000
-                ) } else {
+                )
+                Toast.makeText(this@UploadActivity, "Upload 권한 없음", Toast.LENGTH_LONG).show()
+            } else {
                 // 권한이 있는 경우
+                Toast.makeText(this@UploadActivity, "Upload 권한 있음", Toast.LENGTH_LONG).show()
+                getPicture()
             }
-
-            getPicture()
         }
 
         // 사진 업로드하기
@@ -139,6 +141,7 @@ class UploadActivity : AppCompatActivity() {
         return upload_content_input.text.toString()
     }
 
+    // 권한 요청 결과
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,

@@ -1,13 +1,15 @@
 package com.example.instagram
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_upload.*
-import kotlinx.android.synthetic.main.activity_user_info.*
 import okhttp3.MediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -26,6 +28,20 @@ class UploadActivity : AppCompatActivity() {
 
         // 사진 불러오기
         upload_pic.setOnClickListener {
+            val permissionCheck = ContextCompat.checkSelfPermission(
+                this, android.Manifest.permission.READ_EXTERNAL_STORAGE
+            )
+
+            if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+                // 권한이 없는 경우
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE),
+                    1000
+                ) } else {
+                // 권한이 있는 경우
+            }
+
             getPicture()
         }
 
@@ -114,11 +130,28 @@ class UploadActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<PostFromServer>, t: Throwable) {
+                Toast.makeText(this@UploadActivity, "Upload 실패", Toast.LENGTH_LONG).show()
             }
         })
     }
 
     fun getContent(): String {
         return upload_content_input.text.toString()
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+        if (requestCode == 1000) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // 승인
+            } else {
+                // 거부
+            }
+        }
     }
 }
